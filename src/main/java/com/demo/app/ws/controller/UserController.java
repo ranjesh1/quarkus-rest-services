@@ -6,8 +6,6 @@ import org.jboss.resteasy.annotations.jaxrs.PathParam;
 
 import javax.inject.Inject;
 import javax.ws.rs.*;
-import javax.ws.rs.core.Application;
-import javax.ws.rs.core.MediaType;
 import java.util.List;
 
 

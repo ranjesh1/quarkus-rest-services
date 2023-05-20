@@ -5,12 +5,9 @@ import org.hibernate.annotations.OnDelete;
 import org.hibernate.annotations.OnDeleteAction;
 
 import javax.persistence.*;
-import java.io.Serializable;
 
 @Entity(name = "orders")
-public class Order implements Serializable {
-
-    private static final long serialVersionUID = -4651255750078090696L;
+public class Order{
 
     @Id
     @GeneratedValue
