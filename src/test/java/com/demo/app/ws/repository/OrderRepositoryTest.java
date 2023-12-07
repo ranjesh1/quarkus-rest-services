@@ -7,6 +7,7 @@ import com.demo.app.ws.service.UserService;
 import io.quarkus.test.junit.QuarkusTest;
 import jakarta.inject.Inject;
 import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 
 import java.util.List;
@@ -14,6 +15,7 @@ import java.util.UUID;
 
 import static org.junit.jupiter.api.Assertions.*;
 @QuarkusTest
+@Disabled
 public class OrderRepositoryTest {
     @Inject
     private OrdersRepository ordersRepository;

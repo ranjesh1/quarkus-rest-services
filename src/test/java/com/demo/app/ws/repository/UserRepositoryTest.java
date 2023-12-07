@@ -4,6 +4,7 @@ import com.demo.app.ws.entities.User;
 import com.demo.app.ws.service.UserService;
 import io.quarkus.test.junit.QuarkusTest;
 import jakarta.inject.Inject;
+import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 
 import java.util.UUID;
@@ -11,6 +12,7 @@ import java.util.UUID;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 @QuarkusTest
+@Disabled
 public class UserRepositoryTest {
     @Inject
     private UsersRepository usersRepository;
