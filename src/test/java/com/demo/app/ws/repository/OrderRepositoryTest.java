@@ -5,10 +5,10 @@ import com.demo.app.ws.entities.User;
 import com.demo.app.ws.service.OrderService;
 import com.demo.app.ws.service.UserService;
 import io.quarkus.test.junit.QuarkusTest;
+import jakarta.inject.Inject;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
-import javax.inject.Inject;
 import java.util.List;
 import java.util.UUID;
 

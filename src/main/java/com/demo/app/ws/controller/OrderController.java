@@ -3,11 +3,12 @@ package com.demo.app.ws.controller;
 
 import com.demo.app.ws.entities.Order;
 import com.demo.app.ws.service.OrderService;
-import org.jboss.resteasy.annotations.jaxrs.PathParam;
+import jakarta.inject.Inject;
+import jakarta.ws.rs.*;
+//import org.jboss.resteasy.annotations.jaxrs.PathParam;
 
 
-import javax.inject.Inject;
-import javax.ws.rs.*;
+
 import java.util.List;
 
 @Path("/api/users")

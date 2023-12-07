@@ -5,11 +5,12 @@ import com.demo.app.ws.entities.User;
 
 import com.demo.app.ws.repository.UsersRepository;
 import com.demo.app.ws.service.UserService;
+import jakarta.enterprise.context.ApplicationScoped;
+import jakarta.inject.Inject;
 import org.modelmapper.ModelMapper;
 import org.modelmapper.convention.MatchingStrategies;
 
-import javax.enterprise.context.ApplicationScoped;
-import javax.inject.Inject;
+
 import java.util.List;
 import java.util.Optional;
 import java.util.stream.Collectors;

@@ -2,10 +2,12 @@ package com.demo.app.ws.controller;
 
 import com.demo.app.ws.entities.User;
 import com.demo.app.ws.service.UserService;
-import org.jboss.resteasy.annotations.jaxrs.PathParam;
+import jakarta.inject.Inject;
+import jakarta.ws.rs.*;
+import org.jboss.resteasy.reactive.RestPath;
+//import org.jboss.resteasy.annotations.jaxrs.PathParam;
 
-import javax.inject.Inject;
-import javax.ws.rs.*;
+
 import java.util.List;
 
 
@@ -35,19 +37,19 @@ public class UserController {
 
     @PUT
     @Path("/{id}")
-    public User updateUser(@PathParam Long id, User user) {
+    public User updateUser(@RestPath Long id, User user) {
         return userService.updateUser(id, user);
     }
 
     @PATCH
     @Path("/{id}")
-    public User patchUpdateUser(@PathParam Long id, User user) {
+    public User patchUpdateUser(@RestPath Long id, User user) {
         return userService.patchUpdateUser(id, user);
     }
 
     @DELETE
     @Path("/{id}")
-    public void deleteUser(@PathParam Long id) {
+    public void deleteUser(@RestPath Long id) {
         userService.deleteUser(id);
     }
 

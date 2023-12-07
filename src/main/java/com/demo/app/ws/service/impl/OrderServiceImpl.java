@@ -5,9 +5,10 @@ import com.demo.app.ws.entities.User;
 import com.demo.app.ws.repository.OrdersRepository;
 import com.demo.app.ws.repository.UsersRepository;
 import com.demo.app.ws.service.OrderService;
+import jakarta.enterprise.context.ApplicationScoped;
+import jakarta.inject.Inject;
 
-import javax.enterprise.context.ApplicationScoped;
-import javax.inject.Inject;
+
 import java.util.List;
 
 @ApplicationScoped

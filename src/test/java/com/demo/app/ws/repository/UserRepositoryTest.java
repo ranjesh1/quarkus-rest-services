@@ -3,9 +3,9 @@ package com.demo.app.ws.repository;
 import com.demo.app.ws.entities.User;
 import com.demo.app.ws.service.UserService;
 import io.quarkus.test.junit.QuarkusTest;
+import jakarta.inject.Inject;
 import org.junit.jupiter.api.Test;
 
-import javax.inject.Inject;
 import java.util.UUID;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
