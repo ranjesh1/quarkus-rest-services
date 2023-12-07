@@ -14,6 +14,8 @@ To compile and run this demo you will need:
 - JDK 11+
 - GraalVM
 
+In addition, you will need either a PostgreSQL database, or Docker to run one.
+
 ### Configuring GraalVM and JDK 11+
 
 Make sure that both the `GRAALVM_HOME` and `JAVA_HOME` environment variables have
@@ -37,14 +39,9 @@ live coding. To try this out:
 
 This command will leave Quarkus running in the foreground listening on port 8080.
 
-1. Visit the default endpoint: [http://127.0.0.1:8080](http://127.0.0.1:8080).
-    - Make a simple change to [src/main/resources/META-INF/resources/index.html](src/main/resources/META-INF/resources/index.html) file.
-    - Refresh the browser to see the updated page.
-2. Visit the `/hello` endpoint: [http://127.0.0.1:8080/hello](http://127.0.0.1:8080/hello)
-    - Update the response in [src/main/java/org/acme/quickstart/GreetingResource.java](src/main/java/org/acme/quickstart/GreetingResource.java). Replace `hello` with `hello there` in the `hello()` method.
-    - Refresh the browser. You should now see `hello there`.
-    - Undo the change, so the method returns `hello` again.
-    - Refresh the browser. You should now see `hello`.
+In this mode you can make changes to the code and have the changes immediately applied, by just refreshing your browser.
+
+
 
 ### Run Quarkus in JVM mode
 
@@ -54,6 +51,11 @@ conventional jar file.
 First compile it:
 
 > ./mvnw package
+
+Next we need to make sure you have a PostgreSQL instance running (Quarkus automatically starts one for dev and test mode). To set up a PostgreSQL database with Docker:
+
+> docker run -it --rm=true --name quarkus_test -e POSTGRES_USER=quarkus_test -e POSTGRES_PASSWORD=quarkus_test -e POSTGRES_DB=quarkus_test -p 5432:5432 postgres:13.3 
+
 
 Then run it:
 
