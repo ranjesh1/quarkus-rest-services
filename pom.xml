@@ -35,7 +35,6 @@
 
   <dependencies>
 
-<!--    Basic -->
     <dependency>
       <groupId>io.quarkus</groupId>
       <artifactId>quarkus-resteasy-reactive</artifactId>
@@ -52,27 +51,11 @@
       <scope>test</scope>
     </dependency>
 
-
     <dependency>
       <groupId>io.rest-assured</groupId>
       <artifactId>rest-assured</artifactId>
       <scope>test</scope>
     </dependency>
-
-    <!--    Basic -->
-
-<!--    <dependency>-->
-<!--      <groupId>io.quarkus</groupId>-->
-<!--      <artifactId>quarkus-arc</artifactId>-->
-<!--    </dependency>-->
-
-
-<!--    <dependency>-->
-<!--      <groupId>io.quarkus</groupId>-->
-<!--      <artifactId>quarkus-resteasy-jackson</artifactId>-->
-<!--    </dependency>-->
-
-
 
 
     <dependency>
@@ -80,14 +63,6 @@
       <artifactId>quarkus-junit5-mockito</artifactId>
       <scope>test</scope>
     </dependency>
-
-<!--    <dependency>-->
-<!--      <groupId>io.quarkus</groupId>-->
-<!--      <artifactId>quarkus-test-h2</artifactId>-->
-<!--      <scope>test</scope>-->
-<!--    </dependency>-->
-
-
 
 
     <dependency>
@@ -105,20 +80,6 @@
       <artifactId>modelmapper</artifactId>
       <version>3.0.0</version>
     </dependency>
-
-    <!-- https://mvnrepository.com/artifact/com.fasterxml.jackson.core/jackson-databind -->
-<!--    <dependency>-->
-<!--      <groupId>com.fasterxml.jackson.core</groupId>-->
-<!--      <artifactId>jackson-databind</artifactId>-->
-<!--      <version>2.16.0</version>-->
-<!--    </dependency>-->
-
-
-<!--    <dependency>
-      <groupId>com.fasterxml.jackson.dataformat</groupId>
-      <artifactId>jackson-dataformat-xml</artifactId>
-      <version>2.16.0</version>
-    </dependency>-->
 
 
   </dependencies>
