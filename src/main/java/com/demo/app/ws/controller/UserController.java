@@ -3,10 +3,14 @@ package com.demo.app.ws.controller;
 import com.demo.app.ws.entities.User;
 import com.demo.app.ws.service.UserService;
 import jakarta.inject.Inject;
-import jakarta.ws.rs.*;
+import jakarta.ws.rs.DELETE;
+import jakarta.ws.rs.GET;
+import jakarta.ws.rs.PATCH;
+import jakarta.ws.rs.POST;
+import jakarta.ws.rs.PUT;
+import jakarta.ws.rs.Path;
+import jakarta.ws.rs.PathParam;
 import org.jboss.resteasy.reactive.RestPath;
-//import org.jboss.resteasy.annotations.jaxrs.PathParam;
-
 
 import java.util.List;
 
@@ -19,7 +23,7 @@ public class UserController {
 
     @GET
     @Path("/{id}")
-    public User getUser(@PathParam("id")  Long id) {
+    public User getUser(@PathParam("id") Long id) {
 
         return userService.getUserById(id);
     }

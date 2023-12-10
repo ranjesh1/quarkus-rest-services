@@ -2,8 +2,6 @@ package com.demo.app.ws.controller;
 
 import com.demo.app.ws.entities.User;
 import com.demo.app.ws.service.UserService;
-//import com.fasterxml.jackson.annotation.JsonInclude;
-//import com.fasterxml.jackson.core.
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import io.quarkus.test.InjectMock;
@@ -68,7 +66,7 @@ public class UserControllerTest {
 
         var response = given().contentType(ContentType.JSON)
                 .when()
-                .get("/api/users/" +user.getId())
+                .get("/api/users/" + user.getId())
                 .then()
                 .statusCode(Response.Status.OK.getStatusCode())
                 .extract();
@@ -91,21 +89,21 @@ public class UserControllerTest {
         assertEquals(expected, response.asString());
     }
 
-   @Test
+    @Test
     void testCreateUser() throws Exception {
         String expected = objectMapper.writeValueAsString(user);
-        String request = expected.replace("\"id\":1,","");
+        String request = expected.replace("\"id\":1,", "");
         when(userService.createUser(any(User.class))).thenReturn(user);
 
-       var response = given().contentType(ContentType.JSON)
-               .accept(ContentType.JSON)
-               .body(request)
-               .when()
-               .post("/api/users")
-               .then()
-               .statusCode(Response.Status.OK.getStatusCode())
-               .extract();
-       assertEquals(expected, response.asString());
+        var response = given().contentType(ContentType.JSON)
+                .accept(ContentType.JSON)
+                .body(request)
+                .when()
+                .post("/api/users")
+                .then()
+                .statusCode(Response.Status.OK.getStatusCode())
+                .extract();
+        assertEquals(expected, response.asString());
     }
 
 
@@ -169,6 +167,7 @@ public class UserControllerTest {
                 .extract();
         assertEquals(expectedResponse, response.asString());
     }
+
     @Test
     void testDeleteUser() throws Exception {
         doNothing().when(userService).deleteUser(anyLong());

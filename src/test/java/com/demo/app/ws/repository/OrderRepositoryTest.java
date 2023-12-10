@@ -12,7 +12,10 @@ import org.junit.jupiter.api.Test;
 import java.util.List;
 import java.util.UUID;
 
-import static org.junit.jupiter.api.Assertions.*;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertNotNull;
+import static org.junit.jupiter.api.Assertions.assertTrue;
+
 @QuarkusTest
 public class OrderRepositoryTest {
     @Inject
@@ -35,7 +38,7 @@ public class OrderRepositoryTest {
         User user = new User();
         user.setFirstName("Steve");
         user.setLastName("Rob");
-        user.setEmail( UUID.randomUUID().toString() + "@gmail.com");
+        user.setEmail(UUID.randomUUID().toString() + "@gmail.com");
         user.setFirstLineOfAddress("10 Oliver");
         user.setSecondLineOfAddress("Commercial street");
         user.setTown("London");
@@ -73,7 +76,7 @@ public class OrderRepositoryTest {
         User user = new User();
         user.setFirstName("Steve");
         user.setLastName("Rob");
-        user.setEmail( UUID.randomUUID().toString() + "@gmail.com");
+        user.setEmail(UUID.randomUUID().toString() + "@gmail.com");
         user.setFirstLineOfAddress("10 Oliver");
         user.setSecondLineOfAddress("Commercial street");
         user.setTown("London");

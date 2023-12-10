@@ -96,28 +96,28 @@ public class OrderControllerTest {
         assertEquals(expected, response.asString());
     }
 
-   @Test
+    @Test
     void testCreateOrder() throws Exception {
-       Order createOrder = new Order();
-       createOrder.setDescription(order.getDescription());
-       createOrder.setPriceInPence(order.getPriceInPence());
+        Order createOrder = new Order();
+        createOrder.setDescription(order.getDescription());
+        createOrder.setPriceInPence(order.getPriceInPence());
 
-       objectMapper.setSerializationInclusion(JsonInclude.Include.NON_NULL);
+        objectMapper.setSerializationInclusion(JsonInclude.Include.NON_NULL);
 
-       String createOrderString = objectMapper.writeValueAsString(createOrder);
-       String expectedOrderString = objectMapper.writeValueAsString(order);
+        String createOrderString = objectMapper.writeValueAsString(createOrder);
+        String expectedOrderString = objectMapper.writeValueAsString(order);
 
-       when(orderService.createOrder(anyLong(), any(Order.class))).thenReturn(order);
+        when(orderService.createOrder(anyLong(), any(Order.class))).thenReturn(order);
 
-       var response = given().contentType(ContentType.JSON)
-               .accept(ContentType.JSON)
-               .body(createOrderString)
-               .when()
-               .post("/api/users/{userId}/orders", user.getId())
-               .then()
-               .statusCode(Response.Status.OK.getStatusCode())
-               .extract();
-       assertEquals(expectedOrderString, response.asString());
+        var response = given().contentType(ContentType.JSON)
+                .accept(ContentType.JSON)
+                .body(createOrderString)
+                .when()
+                .post("/api/users/{userId}/orders", user.getId())
+                .then()
+                .statusCode(Response.Status.OK.getStatusCode())
+                .extract();
+        assertEquals(expectedOrderString, response.asString());
     }
 
 
@@ -147,7 +147,6 @@ public class OrderControllerTest {
         assertEquals(expectedOrderString, response.asString());
 
     }
-
 
 
     @Test

@@ -77,7 +77,7 @@ public class OrderServiceImpl implements OrderService {
 
     @Override
     public void deleteOrder(Long userId, Long orderId) {
-        Order order = ordersRepository.findByIdAndUserId(orderId, userId)
+        ordersRepository.findByIdAndUserId(orderId, userId)
                 .orElseThrow(() -> new RuntimeException("User with id " + userId + " and order id " + orderId + " Not found"));
         ordersRepository.deleteById(orderId);
     }
