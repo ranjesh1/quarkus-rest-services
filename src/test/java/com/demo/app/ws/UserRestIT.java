@@ -2,24 +2,19 @@ package com.demo.app.ws;
 
 import com.demo.app.ws.entities.User;
 import com.fasterxml.jackson.databind.ObjectMapper;
-import io.quarkus.test.common.QuarkusTestResource;
-import io.quarkus.test.h2.H2DatabaseTestResource;
 import io.quarkus.test.junit.QuarkusTest;
 import io.restassured.http.ContentType;
+import jakarta.inject.Inject;
 import jakarta.ws.rs.core.Response;
 import org.junit.jupiter.api.BeforeEach;
-import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 
-import javax.inject.Inject;
 import java.util.UUID;
 
 import static io.restassured.RestAssured.given;
 import static org.hamcrest.Matchers.is;
 
-@Disabled
 @QuarkusTest
-@QuarkusTestResource(H2DatabaseTestResource.class)
 public class UserRestITest {
 
     private User user;
@@ -32,7 +27,7 @@ public class UserRestITest {
         user = new User();
         user.setFirstName("Steve");
         user.setLastName("Rob");
-        user.setEmail( UUID.randomUUID().toString() + "@gmail.com");
+        user.setEmail(UUID.randomUUID().toString() + "@gmail.com");
         user.setId(1L);
         user.setFirstLineOfAddress("12 Avenue");
         user.setSecondLineOfAddress("Commercial street");
@@ -44,7 +39,7 @@ public class UserRestITest {
     @Test
     public void testCreateUser() throws Exception {
         String expected = objectMapper.writeValueAsString(user);
-        String request = expected.replace("\"id\":1,","");
+        String request = expected.replace("\"id\":1,", "");
 
         given().contentType(ContentType.JSON)
                 .accept(ContentType.JSON)
