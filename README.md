@@ -63,6 +63,32 @@ Then run it:
 
 Have a look at how fast it boots, or measure the total native memory consumption.
 
+
+###  To test application manually
+Use Postman or any other REST client to send POST request with the following details
+
+URL : http://localhost:8080/api/users
+
+Request Body
+
+{
+"firstName":"Steve",
+
+"lastName":"Rob",
+
+"email":"steverob@test.com",
+
+"firstLineOfAddress":"111 Pinewood Grove",
+
+"secondLineOfAddress":"Commercial street",
+
+"town":"London",
+
+"postCode":"W7 8AG"
+
+}
+
+
 ### Run Quarkus as a native executable
 
 You can also create a native executable from this application without making any
