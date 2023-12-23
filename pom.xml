@@ -34,7 +34,6 @@
   </dependencyManagement>
 
   <dependencies>
-
     <dependency>
       <groupId>io.quarkus</groupId>
       <artifactId>quarkus-resteasy-reactive</artifactId>
@@ -57,13 +56,11 @@
       <scope>test</scope>
     </dependency>
 
-
     <dependency>
       <groupId>io.quarkus</groupId>
       <artifactId>quarkus-junit5-mockito</artifactId>
       <scope>test</scope>
     </dependency>
-
 
     <dependency>
       <groupId>io.quarkus</groupId>
@@ -80,9 +77,8 @@
       <artifactId>modelmapper</artifactId>
       <version>3.0.0</version>
     </dependency>
-
-
   </dependencies>
+
   <build>
     <plugins>
       <plugin>
